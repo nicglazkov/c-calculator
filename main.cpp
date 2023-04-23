@@ -53,11 +53,11 @@ int main()
     cout << "The result is:\n";
     cout << result;
 
-    cout << "\nWould you like to make another calculation? (1 for yes and 2 for no)\n>>> ";
+    cout << "\nWould you like to make another calculation? y/n\n>>> ";
 
     int repeat;
     cin >> repeat;
-    if (repeat == 2)
+    if (repeat == 'n')
     {
       cout << "Goodbye!\n\n";
       return 0;
