@@ -5,7 +5,7 @@ int askForNumber()
 {
 
   int E;
-  cout << "What number?\n";
+  cout << "What number?\n>>> ";
   cin >> E;
   return E;
 }
@@ -13,7 +13,7 @@ int askForNumber()
 char askForOperation()
 {
   char operation;
-  cout << "What operation? (+ for addition, - for subtraction, / for division, and * for multiplication)\n";
+  cout << "What operation? (+ for addition, - for subtraction, / for division, and * for multiplication)\n>>> ";
   cin >> operation;
   return operation;
 }
@@ -21,24 +21,22 @@ char askForOperation()
 int calculate(int x, char op, int y)
 {
   int result;
-  if (op == '+')
-  {
-    result = x + y;
-  }
-
-  if (op == '-')
-  {
-    result = x - y;
-  }
-
-  if (op == '/')
-  {
-    result = x / y;
-  }
-
-  if (op == '*')
-  {
-    result = x * y;
+  switch (op){
+    case '+':
+      result = x + y;
+      break;
+    case '-':
+      result = x - y;
+      break;
+    case '/':
+      result = x / y;
+      break;
+    case '*':
+      result = x * y;
+      break;
+    default:
+      throw "Invalid operation";
+      break;
   }
   return result;
 }
@@ -55,14 +53,14 @@ int main()
     cout << "The result is:\n";
     cout << result;
 
-    cout << "\nWould you like to make another calculation? (1 for yes and 2 for no)\n";
+    cout << "\nWould you like to make another calculation? y/n\n>>> ";
 
     int repeat;
     cin >> repeat;
-    if (repeat == 2)
+    if (repeat == 'n')
     {
       cout << "Goodbye!\n\n";
-      break;
+      return 0;
     }
   }
 
