@@ -35,7 +35,7 @@ int calculate(int x, char op, int y)
       result = x * y;
       break;
     default:
-      cout << "Invalid operation";
+      throw "Invalid operation";
       break;
   }
   return result;
