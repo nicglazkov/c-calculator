@@ -21,24 +21,22 @@ char askForOperation()
 int calculate(int x, char op, int y)
 {
   int result;
-  if (op == '+')
-  {
-    result = x + y;
-  }
-
-  if (op == '-')
-  {
-    result = x - y;
-  }
-
-  if (op == '/')
-  {
-    result = x / y;
-  }
-
-  if (op == '*')
-  {
-    result = x * y;
+  switch (op){
+    case '+':
+      result = x + y;
+      break;
+    case '-':
+      result = x - y;
+      break;
+    case '/':
+      result = x / y;
+      break;
+    case '*':
+      result = x * y;
+      break;
+    default:
+      cout << "Invalid operation";
+      break;
   }
   return result;
 }
