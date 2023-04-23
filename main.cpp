@@ -62,7 +62,7 @@ int main()
     if (repeat == 2)
     {
       cout << "Goodbye!\n\n";
-      break;
+      return 0;
     }
   }
 
